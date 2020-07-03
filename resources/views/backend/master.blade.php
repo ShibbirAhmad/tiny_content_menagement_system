@@ -67,7 +67,7 @@
         </div>
     </section>
   
-
+   
 
     <!-- Jquery Core Js -->
     <script src="{{asset('backend/plugins/jquery/jquery.min.js ')}}"></script>
@@ -75,6 +75,8 @@
     <!-- Bootstrap Core Js -->
     <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.js ')}}"></script>
 
+    @stack('js')
+    
     <!-- Select Plugin Js -->
     <script src="{{asset('backend/plugins/bootstrap-select/js/bootstrap-select.js ')}}"></script>
 
@@ -113,7 +115,7 @@
     <!-- Demo Js -->
     <script src="{{asset('backend/js/demo.js ')}}"></script>
 
-    @stack('js')
+    
 
 </body>
 </html>

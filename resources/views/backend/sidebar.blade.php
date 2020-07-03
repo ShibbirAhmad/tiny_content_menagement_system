@@ -33,18 +33,29 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active">
-                    <a href="index.html">
-                        <i class="material-icons">home</i>
-                        <span>Home</span>
+                    <a href="{{route('admin.dashboard')}}">
+                        <i class="material-icons">Dashboard</i>
+                        <span>Dashboard</span>
                     </a>
                 </li>
            
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="material-icons col-light-blue">donut_large</i>
-                        <span>Information</span>
+                 <!--post option start from here-->
+                 <li class="{{Request::is('admin/post*') ? 'active' : ''}}">
+                    <a href="{{route('admin.post.index')}}">
+                        <i class="material-icons">library_books</i>
+                        <span>Posts</span>
                     </a>
                 </li>
+
+                 <!--post pending option start from here-->
+                 {{-- <li class="{{Request::is('admin/pending/post') ? 'active' : ''}}">
+                    <a href="{{route('admin.post.pending')}}">
+                        <i class="material-icons">library_books</i>
+                        <span>Posts Pending</span>
+                    </a>
+                    </li> --}}
+                
+
             </ul>
         </div>
         <!-- #Menu -->

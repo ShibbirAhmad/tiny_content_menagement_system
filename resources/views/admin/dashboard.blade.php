@@ -11,7 +11,7 @@
 
  
 <div class="block-header">
-    <h2>WELCOME USERNAME NAME ADMIN PANEL </h2>
+    <h2>WELCOME {{ Auth::user()->name }} To your Dashborad panel </h2>
 </div>
 
 <!-- Widgets -->
