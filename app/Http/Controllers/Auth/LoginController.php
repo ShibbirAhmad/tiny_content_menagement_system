@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -35,11 +36,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        if (Auth::check() && Auth::user()->role_id==1) {
+        if (Auth::check() && Auth::user()->role_id == 1) {
              
             $this->redirectTo=route('admin.dashboard');
 
          }
+
         $this->middleware('guest')->except('logout');
     }
 }

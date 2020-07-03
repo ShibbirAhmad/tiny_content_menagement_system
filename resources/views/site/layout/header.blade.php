@@ -10,7 +10,18 @@
 				<li><a href="">Home</a></li>
 				<li><a href="post-details.html">Image Content </a></li>
 				<li><a href="video-details.html">Video Content</a></li>
+				@guest
+
 				<li><a href="{{route('login')}}">Login</a></li>
+				
+				@else 
+
+				@if (Auth::user()->role_id== 1 )
+				<li><a href="{{route('admin.dashboard')}}">Dashboard</a></li> 
+				@endif 
+
+				@endguest
+			
 			</ul><!-- main-menu -->
 
 			<div class="src-area">
