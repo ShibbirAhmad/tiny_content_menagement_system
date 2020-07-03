@@ -34,7 +34,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active">
                     <a href="{{route('admin.dashboard')}}">
-                        <i class="material-icons">Dashboard</i>
+                        <i class="material-icons">dashboard</i>
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -48,12 +48,12 @@
                 </li>
 
                  <!--post pending option start from here-->
-                 {{-- <li class="{{Request::is('admin/pending/post') ? 'active' : ''}}">
+                 <li class="{{Request::is('admin/pending/post') ? 'active' : ''}}">
                     <a href="{{route('admin.post.pending')}}">
                         <i class="material-icons">library_books</i>
                         <span>Posts Pending</span>
                     </a>
-                    </li> --}}
+                    </li>
                 
 
             </ul>

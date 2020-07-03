@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->string('content_type');
             $table->string('feature_img');
-            $table->string('embaded_link');
+            $table->string('embaded_link')->nullable();
             $table->text('description');
             $table->boolean('is_approved')->default(false);
             $table->string('author');

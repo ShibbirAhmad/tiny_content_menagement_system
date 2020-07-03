@@ -51,10 +51,10 @@
                  </div>
                  
                  {!! Form::label('video_link', 'youtube Video or embaded link',) !!}
-                 {!! Form::text('video_link', '', ['class' => 'form-control form-inline', 'placeholder' => ' youtube video link ']) !!}
-                 
 
-                 <div class="form-group">
+                  <input type="text" class="form-control" placeholder=" youtube video link"  name="video_link" id="">
+
+                 <div style="margin-top:10px;" class="form-group ">
                     
                     {!! Form::label('description', 'Post Related Description', ) !!}
 
@@ -101,7 +101,7 @@
                  
              </div>
 
-             {!! Form::submit('Save', ['class' => 'btn btn-lg btn-primary ']) !!}
+             {!! Form::submit('Save', ['class' => 'btn btn-lg btn-primary ']) !!} 
 
             {!! Form::close() !!}
         </div>
@@ -127,10 +127,7 @@
         CKEDITOR.replace('ckeditor');
         CKEDITOR.config.height = 300;
     
-         //Editor
-         CKEDITOR.replace('editor');
-        CKEDITOR.config.height = 300;
-    
+        
 
         console.log("Hello");
       

@@ -14,7 +14,9 @@ Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'mi
     
     Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@index']); 
     Route::resource('post', 'PostController');
-    //Route::get('post','PostPendingController@pending')->name('post.pending');
+    
+    Route::get('pending/post','PostPendingController@pending')->name('post.pending');
+    Route::patch('pending/post/approve','PostPendingController@postApprove')->name('post.approve');
 
 });
 

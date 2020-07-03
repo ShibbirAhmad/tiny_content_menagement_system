@@ -5,7 +5,6 @@
     <style>
         { font-size:16px;margin:10px;}
         .img-info {width: 100px;height:80px;border-radius: 10px; }
-
     </style>
 @endpush
 
@@ -19,8 +18,8 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="header">
-                <h2 class="heading"> <a class="btn btn-info" href="{{route('admin.post.create')}}">Add New Post </a></h2>
-                <h4 class="heading">Published Content List </h4>
+               
+                <h4 class="heading">Total pending or Unpublished Contents</h4>
             </div>
             <div class="body">
                 <div class="table-responsive">
@@ -51,14 +50,13 @@
                         </tfoot>
                         <tbody>
 
-                            @foreach ($posts as $key=> $post)
+                            @foreach ($pending_posts as $key=> $post)
                         
                             <tr>
                                 <td>{{$key+1 }}</td>
                                 <td>{{ str_limit($post->title,35) }}</td>
                                 <td>{{$post->content_type  }}</td>
-                                <td><img  class="img-responsive img-info " src="{{asset('backend/images/posts/'.$post->feature_img)}}" alt=""> </td>
-                            </td>
+                                <td> <img  class="img-responsive img-info " src="{{asset('backend/images/posts/'.$post->feature_img)}}" alt=""> </td>
 
                                 <td>
                                     @if ($post->is_approved==true)
@@ -70,9 +68,9 @@
 
                                 <td> {{$post->author }} </td>
                                 <td colspan="2">
-                                    <a href="{{route('admin.post.show',$post->id)}}"  class="btn btn-dark "><i class="fa fa-eye"></i></a>   
-                                   
-                               <div style="margin-top:-31px; margin-left:55px" >
+                                    <a style="margin-left:0px" href="{{route('admin.post.show',$post->id)}}"  class="btn btn-dark "><i class="fa fa-eye"></i></a>   
+                                    <a  href="" class="btn btn-warning" style="margin-right:40px;"><i class="fa fa-check "></i></a> 
+                               <div style="margin-top:-30px; margin-left:85px" >
                                    {!! Form::open(['method'=>'DELETE', 'route'=> ['admin.post.destroy',$post->id ]] ) !!}
                                     <button class="btnDelete btn btn-danger"><i class="fa fa-trash-alt"></i></button>
                                    {!! Form::close() !!}

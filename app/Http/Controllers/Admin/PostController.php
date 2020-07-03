@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 
 class PostController extends Controller
 {
@@ -38,7 +40,56 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+            
+
+        $data= $request->all();
+   
+        $validate=Validator::make($data,[
+          
+            'title' => 'required|unique:posts',
+            'postImage' => 'required|mimes:jpg,jpeg,png,gif',
+            'description' => 'required',
+             
+
+            ]);
+
+        if ($validate->fails()) {
+           
+             return redirect()->back()->withErrors($validate)->withInput();
+
+        }
+
+        if (!$validate->fails()) {
+              
+             $post= new Post ;
+             $post->title=$request->input('title');
+             $post->slug=str_slug($request->input('title'));
+             $post->content_type=$request->input('content_type');
+             $post->description=$request->input('description');
+             $post->embaded_link=$request->input('video_link');
+             $post->is_approved=false ;
+             $post->author=Auth::user()->name;
+
+
+             if ($request->hasFile('postImage')) {
+                $image=$request->file('postImage');
+                $slug=str_slug($request->title);
+                $imageName=$slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+                $image->move(public_path('backend/images/posts/'),$imageName);
+
+            $post->feature_img=$imageName ;
+              
+                } 
+
+             if($post->save() ){
+
+                return redirect()->route('admin.post.index')->with('success','successfully! New Post Added');      
+             
+                  }
+
+               
+        }
     }
 
     /**
@@ -49,7 +100,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return \view('admin.post.show',\compact('post'));
     }
 
     /**
@@ -83,6 +136,17 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $delt_post= Post::findOrFail($id);
+         
+         if (file_exists('backend/images/posts/'.$delt_post->feature_img)) {
+          
+            unlink('backend/images/posts/'.$delt_post->feature_img);
+  
+         }
+         
+         if ($delt_post->delete()) {
+            
+             return redirect()->back()->with('danger','one post Deleted permanently');
+         }
     }
 }
