@@ -5,15 +5,7 @@
     
 <style> 
     
-    .random-post {
-        
-             float: left;
-             margin: 20px;
-             margin-left:0px;
-             height:auto;
-             width:45%;
-
-             }
+ 
      .embaded-video {
                          
              height:400px;
@@ -37,40 +29,25 @@
               
     <div class="card">
         <div class="card-header">
-            <h4>Why Laravel is the famous backend framwork in the world</h4>
+            <h4>{{ $post->title }}</h4>
         </div>
 
         <div class="card-body">
            <div class="latest-post-img-container">
            
 
-               <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1" class="embaded-video" frameborder="0" control="1" ></iframe>
-               <p>
-                  this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum 
-              
-                  this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum   this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum 
-
-                  this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum 
-              
-              </p>     
+               <iframe src="{{ $post->embaded_link }}" class="embaded-video" frameborder="0" control="1" ></iframe>
+               <p> {!! $post->description !!} </p>     
 
               </div>
         </div>
         <div class="card-footer">
            share video now : 
-           <a href=""><i class="fab fa-lg fa-facebook-f "></i>  </a>  
-           <a href=""><i class="fab fa-lg fa-twitter "></i> </a> 
-           <a href=""> <i class="fab  fa-lg fa-linkedin"></i> </a>
-           <a href=""> <i class="fab  fa-lg  fa-pinterest"></i> </a> 
-           <a href=""> <i class="fab  fa-lg  fa-vimeo-square"></i> </a> 
+           <a href="{}"><i class="fab fa-lg fa-facebook-f "></i>  </a>  
+           <a href="twitter.com"><i class="fab fa-lg fa-twitter "></i> </a> 
+           <a href="linkedin.com"> <i class="fab  fa-lg fa-linkedin"></i> </a>
+           <a href="pinterest.com"> <i class="fab  fa-lg  fa-pinterest"></i> </a> 
+           <a href="vimeo.com"> <i class="fab  fa-lg  fa-vimeo-square"></i> </a> 
       
         
        </div>
@@ -95,40 +72,31 @@
 <div class="col-md-4 col-sm-12">
 
    <div class="card">
-       <div class="card-header text-center "><h5 >Recomended Content</h5></div>
-       <div class="card-body">
-           <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
+       <div class="card-header text-center "><h4 >Recomended Content</h4></div>
+       <div class="card-body mt-2 ">
 
-            <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
+           
+        @foreach ($random_video_posts as $r_v_post)
+                     
+        <div class="small_video_area ">
+            <div style=" 
+            height:140px;
+            width:100%;
+            border-radius:5px;
+            background:url({{asset('backend/images/posts/'.$r_v_post->feature_img)}});
+            background-repeat:no-repeat;
+            background-size:100% 140px " >
 
-            <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
+            </div> 
 
+           <a class="small-video-icon" href="{{route('video.details',$r_v_post->slug)}}"> <i class="fa fa-lg fa-play-circle "></i> </a> 
+       </a> 
 
-             <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
+     <h4> {{ $r_v_post->title }} </h4>
+    </div>
+         @endforeach
+
+         
        </div>
      
    </div>

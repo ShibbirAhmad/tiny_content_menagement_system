@@ -68,10 +68,14 @@
 
                                 <td> {{$post->author }} </td>
                                 <td colspan="2">
-                                    <a style="margin-left:0px" href="{{route('admin.post.show',$post->id)}}"  class="btn btn-dark "><i class="fa fa-eye"></i></a>   
-                                    <a  href="" class="btn btn-warning" style="margin-right:40px;"><i class="fa fa-check "></i></a> 
-                               <div style="margin-top:-30px; margin-left:85px" >
-                                   {!! Form::open(['method'=>'DELETE', 'route'=> ['admin.post.destroy',$post->id ]] ) !!}
+                                    <a  href="{{route('admin.post.show',$post->id)}}" style="margin-bottom:5px;margin-left:20px;" class="btn btn-dark "><i style="color:#000" class="fa fa-lg fa-eye  "></i></a>   
+                                    <div  >
+                                        {!! Form::open(['method'=>'PATCH', 'route'=> ['admin.post.approve',$post->id ]] ) !!}
+                                         <button class="btnApprove btn btn-info"><span  class="" >approve</span><i class="fa fa-check ml-1  "></i></button>
+                                        {!! Form::close() !!}
+                                </div> 
+                               <div style="margin-top:-31px; margin-left:87px" >
+                                   {!! Form::open(['method'=>'DELETE', 'route'=> ['admin.post.destroy',$post->id ]] ) !!} 
                                     <button class="btnDelete btn btn-danger"><i class="fa fa-trash-alt"></i></button>
                                    {!! Form::close() !!}
                                </div> 

@@ -7,9 +7,9 @@
 			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="navicon"></i></div>
 
 			<ul class="main-menu visible-on-click" id="main-menu">
-				<li><a href="">Home</a></li>
-				<li><a href="post-details.html">Image Content </a></li>
-				<li><a href="video-details.html">Video Content</a></li>
+				<li><a href="{{route('home')}}">Home</a></li>
+				<li><a href="{{route('post.content')}}">Image Content </a></li>
+				<li><a href="{{route('video.content')}}">Video Content</a></li>
 				@guest
 
 				<li><a href="{{route('login')}}">Login</a></li>

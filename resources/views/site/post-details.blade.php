@@ -38,30 +38,15 @@
               
     <div class="card">
         <div class="card-header">
-            <h4>Why Laravel is the famous backend framwork in the world</h4>
+            <h4>{{ $post->title }}</h4>
         </div>
 
         <div class="card-body">
            <div class="latest-post-img-container">
            
-               <img class="latest-post-img img-responsive" src="" alt="">
+               <img class="latest-post-img img-responsive" src="{{asset('backend/images/posts/'.$post->feature_img)}}" alt="">
 
-               <p>
-                  this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum 
-              
-                  this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum   this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum 
-
-                  this video description lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                  lorem ipsum this video title lorem ipsum 
-              
-              </p>     
+               <p> {!! $post->description !!}  </p>     
 
               </div>
         </div>
@@ -96,40 +81,19 @@
 <div class="col-md-4 col-sm-12">
 
    <div class="card">
-       <div class="card-header text-center "><h5 >Recomended Content</h5></div>
-       <div class="card-body">
-           <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
-
+       <div class="card-header text-center "><h4 >Recomended Content</h4></div>
+       <div class="card-body mt-2 ">
+      
+        @foreach ($random_image_posts as $r_post)
             <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
+                <a class="" href="{{ route('post.details',$r_post->slug) }}">
+                <img class="img-responsive random-post-img" src="{{asset('backend/images/posts/'.$r_post->feature_img)}}" alt=""> 
+                </a> 
+                    <h4> {{ $r_post->title }} </h4>   
+             </div>
+       @endforeach
 
-            <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
-
-
-             <div class="random-post">
-               <a class="random-post-img" href="post-details.html">
-               <img class="img-responsive" src="" alt=""> 
-               </a> 
-                <h4>this video title lorem ipsum this video title
-                   lorem ipsum this video title lorem ipsum </h4>   
-            </div>
+           
        </div>
      
    </div>

@@ -11,125 +11,58 @@
     
         <!--video content start  -->
         <div class="col-md-8 col-sm-12">
-            <div class="row">
+            <div class="row">  
 
                 <!--video content big area start  -->
                 <div class="col-md-6 col-sm-12">
 
-                      <div class="big_video_area ">
+                    @foreach ($fix_video_posts as $fix_video_post)
+                    <div class="big_video_area ">
                       
-                           <a  class="embaded-video" href=""> <img class="img-responsive"  src="" alt=""> </a>  
-                           <a class="video-icon float-right " href=""> <i class="fa fa-lg fa-play-circle "></i></a> 
-                         
-                         <h4>this video title lorem ipsum this video title
-                              lorem ipsum this video title lorem ipsum </h4>
-                         
-                         <p>
-                           this video description lorem ipsum this video title
-                           lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                           lorem ipsum this video title lorem ipsum 
+                         <div style=" 
+                         height:240px;
+                         width:100%;
+                         border-radius:10px;
+                         background:url({{asset('backend/images/posts/'.$fix_video_post->feature_img)}});
+                         background-repeat:no-repeat;
+                         background-size:100% 240px " >
+                 
+                         </div> 
+                    
+                         <a  href="{{route('video.details',$fix_video_post->slug)}}" class="video-icon float-right "> <i class="fa fa-lg fa-play-circle "></i></a> 
                        
-                           this video description lorem ipsum this video title
-                           lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                           lorem ipsum this video title lorem ipsum 
+                       <h4> {{ $fix_video_post->title }} </h4>
                        
-                       </p>     
-                      </div>
-                      
+                       <p> {!! $fix_video_post->description !!}   </p> 
 
-                      <div class="big_video_area ">
-                      
-                       <a  class="embaded-video" href="video-details.html"> <img class="img-responsive"  src="" alt=""> </a>  
-                       <a class="video-icon float-right " href=""> <i class="fa fa-lg fa-play-circle "></i></a> 
-                     
-                     <h4>this video title lorem ipsum this video title
-                          lorem ipsum this video title lorem ipsum </h4>
-                     
-                     <p>
-                       this video description lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum 
-                   
-                       this video description lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum 
-                   
-                     </p>     
-                     </div>
-
+                    </div>
+                    @endforeach
                       
                 </div>
                 <!--video content big area end  --> 
 
                 <div class="col-md-6 col-sm-12">
 
+
+                 @foreach ($random_video_posts as $r_v_post)
+                     
                 <div class="small_video_area ">
-                   
-                    <a class="small-embaded-video " href="video-details.html"> 
-                        <img class="img-responsive" src="" alt=""> 
-                        <i class="fa fa-lg fa-play-circle  float-right small-video-icon "></i>
-                   </a> 
-           
-                 <h4>this video title lorem ipsum this video title
-                      lorem ipsum this video title lorem ipsum </h4>
-                </div>
+                    <div style=" 
+                    height:140px;
+                    width:100%;
+                    border-radius:5px;
+                    background:url({{asset('backend/images/posts/'.$r_v_post->feature_img)}});
+                    background-repeat:no-repeat;
+                    background-size:100% 140px " >
 
-                <div class="small_video_area ">
-                   
-                   <a class="small-embaded-video " href="video-details.html"> 
-                       <img class="img-responsive" src="" alt=""> 
-                       <i class="fa fa-lg fa-play-circle  float-right small-video-icon "></i>
-                  </a> 
-          
-                <h4>this video title lorem ipsum this video title
-                     lorem ipsum this video title lorem ipsum </h4>
-               </div>
+                    </div> 
 
-               <div class="small_video_area ">
-                   
-                   <a class="small-embaded-video " href="video-details.html"> 
-                       <img class="img-responsive" src="" alt=""> 
-                       <i class="fa fa-lg fa-play-circle  float-right small-video-icon "></i>
-                  </a> 
-          
-                <h4>this video title lorem ipsum this video title
-                     lorem ipsum this video title lorem ipsum </h4>
-               </div>
-
-               <div class="small_video_area ">
-                   
-                   <a class="small-embaded-video " href="video-details.html"> 
-                       <img class="img-responsive" src="" alt=""> 
-                       <i class="fa fa-lg fa-play-circle  float-right small-video-icon "></i>
-                  </a> 
-          
-                <h4>this video title lorem ipsum this video title
-                     lorem ipsum this video title lorem ipsum </h4>
-               </div>
-
-
-               <div class="small_video_area ">
-                   
-                   <a class="small-embaded-video " href="video-details.html"> 
-                       <img class="img-responsive" src="" alt=""> 
-                       <i class="fa fa-lg fa-play-circle  float-right small-video-icon "></i>
-                  </a> 
-          
-                <h4>this video title lorem ipsum this video title
-                     lorem ipsum this video title lorem ipsum </h4>
-               </div>
-
-               <div class="small_video_area ">
-                   
-                   <a class="small-embaded-video " href="video-details.html"> 
-                       <img class="img-responsive" src="" alt=""> 
-                       <i class="fa fa-lg fa-play-circle  float-right small-video-icon "></i>
-                  </a> 
-          
-                <h4>this video title lorem ipsum this video title
-                     lorem ipsum this video title lorem ipsum </h4>
-               </div>
-
+                   <a class="small-video-icon" href="{{route('video.details',$r_v_post->slug)}}"> <i class="fa fa-lg fa-play-circle "></i> </a> 
+               </a> 
+       
+             <h4> {{ $r_v_post->title }} </h4>
+            </div>
+                 @endforeach
 
                 </div>
 
@@ -147,23 +80,15 @@
               <!--latest post -->
               <div class="col-md-12 latest-post ">
                     <div class="latest-post-img-container">
-                   
-                       <img class="latest-post-img img-responsive" src="" alt="">
+                    @foreach ($single_image_post as $single_image_post)
+                    <img class="latest-post-img img-responsive" src="{{ asset('backend/images/posts/'.$single_image_post->feature_img)}}" alt="">
 
-                    <h4>this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum </h4>
+                    <h4> {{ $single_image_post->title }} </h4>
 
-                       <p>
-                          this video description lorem ipsum this video title
-                          lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                          lorem ipsum this video title lorem ipsum 
-                      
-                          this video description lorem ipsum this video title
-                          lorem ipsum this video title lorem ipsum this video title lorem ipsum this video title
-                          lorem ipsum this video title lorem ipsum 
-                      
-                      </p>     
+                       <p> {!! $single_image_post->description !!} </p>     
 
+                    @endforeach
+                       
                       </div>
               </div>
              <!--latest post -->
@@ -171,39 +96,14 @@
               <!--random post -->
              <div class="col-md-12">
                
+               @foreach ($random_image_posts as $r_post)
                <div class="random-post">
-                   <a class="random-post-img" href="post-details.html">
-                   <img class="img-responsive" src="" alt=""> 
-                   </a> 
-                    <h4>this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum </h4>   
-                </div>
-
-                <div class="random-post">
-                   <a class="random-post-img" href="post-details.html">
-                   <img class="img-responsive" src="" alt=""> 
-                   </a> 
-                    <h4>this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum </h4>   
-                </div>
-
-                <div class="random-post">
-                   <a class="random-post-img" href="post-details.html">
-                   <img class="img-responsive" src="" alt=""> 
-                   </a> 
-                    <h4>this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum </h4>   
-                </div>
-
-
-                 <div class="random-post">
-                   <a class="random-post-img" href="post-details.html">
-                   <img class="img-responsive" src="" alt=""> 
-                   </a> 
-                    <h4>this video title lorem ipsum this video title
-                       lorem ipsum this video title lorem ipsum </h4>   
-                </div>
-
+                    <a class="" href="{{ route('post.details',$r_post->slug) }}">
+                    <img class="img-responsive random-post-img" src="{{asset('backend/images/posts/'.$r_post->feature_img)}}" alt=""> 
+                    </a> 
+                     <h4> {{ $r_post->title }} </h4>   
+                 </div>
+               @endforeach
 
              </div>
               <!--random post -->

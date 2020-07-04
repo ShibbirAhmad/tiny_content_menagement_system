@@ -12,10 +12,21 @@ $(document).ready(function(){
  
         e.preventDefault();
     });
+
+
+    $('.btnApprove').click(function(e){
+  
+        if (confirm('Are you Sure?')) {
+            
+            return true;
+        }
+  
+         e.preventDefault();
+     });
     
   });
  
- 
+  
  
  //this for disappear alert
  

@@ -19,4 +19,19 @@ class PostPendingController extends Controller
           return view('admin.post.pending',compact('pending_posts')) ;
 
      }
+
+
+     //function for approve the pending posts
+     public function postApprove($id){
+           
+           $post= Post::findOrFail($id);
+           $post->is_approved=true;
+           if ($post->save()) {
+               
+               return redirect()->back()->with('success','this post are now published');
+           }
+     }
+
+
+
 }

@@ -155,20 +155,16 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 
 .video-icon{
 
-	margin:5px;
-	margin-top:-30px;
-	color:rgb(20, 87, 72)
+	margin:7px;
+	float: right;
+	margin-top:-36px;
+	font-size: 22px;
+	color:rgb(20, 87, 72);
 }
 
 h4 { margin-top:10px; margin-bottom: 10px;}
-.embaded-video { 
 
-	height:240px;
-	width:100%;
-	border-radius:10px;
-	background:#5524;}
 	
-
 
 .small_video_area {
 
@@ -185,19 +181,11 @@ h4 { margin-top:10px; margin-bottom: 10px;}
 }
 
 
-.small-embaded-video {
-
-	
-	height:140px;
-	width:100%;
-	border-radius:5px;
-	background:#5524;
-}
-
 .small-video-icon{
-
+    float:right;
 	margin:5px;
-    margin-top:90px;
+	font-size: 18px;
+    margin-top:-28px;
 	color:rgb(20, 87, 72)
 }
 
