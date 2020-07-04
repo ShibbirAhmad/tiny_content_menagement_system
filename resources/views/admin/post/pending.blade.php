@@ -23,7 +23,7 @@
             </div>
             <div class="body">
                 <div class="table-responsive">
-                    <table class="table table-hover dashboard-task-infos">
+                    <table class="table text-center table-hover dashboard-task-infos">
                         <thead>
                             <tr>
                                 <th>Serial No</th>
@@ -68,8 +68,8 @@
 
                                 <td> {{$post->author }} </td>
                                 <td colspan="2">
-                                    <a  href="{{route('admin.post.show',$post->id)}}" style="margin-bottom:5px;margin-left:20px;" class="btn btn-dark "><i style="color:#000" class="fa fa-lg fa-eye  "></i></a>   
-                                    <div  >
+                                    <a  href="{{route('admin.post.pending.show',$post->id)}}" style="margin-bottom:5px;margin-left:-40px;" class="btn btn-dark "><i style="color:#000" class="fa fa-lg fa-eye  "></i></a>   
+                                    <div  style="margin-left:-40px;" >
                                         {!! Form::open(['method'=>'PATCH', 'route'=> ['admin.post.approve',$post->id ]] ) !!}
                                          <button class="btnApprove btn btn-info"><span  class="" >approve</span><i class="fa fa-check ml-1  "></i></button>
                                         {!! Form::close() !!}

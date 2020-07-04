@@ -39,6 +39,13 @@
                     </a>
                 </li>
            
+                <li class="active">
+                    <a href="{{route('home')}}">
+                        <i class="material-icons">labels</i>
+                        <span>Visit Site </span>
+                    </a>
+                </li>
+
                  <!--post option start from here-->
                  <li class="{{Request::is('admin/post*') ? 'active' : ''}}">
                     <a href="{{route('admin.post.index')}}">

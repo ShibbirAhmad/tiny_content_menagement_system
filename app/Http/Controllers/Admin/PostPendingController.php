@@ -19,7 +19,16 @@ class PostPendingController extends Controller
           return view('admin.post.pending',compact('pending_posts')) ;
 
      }
+  
+     
+      //get for pending show post 
+      public function pendingShow($id){
 
+          $post= Post::findOrFail($id);
+  
+            return view('admin.post.pending-show',compact('post')) ;
+  
+       }
 
      //function for approve the pending posts
      public function postApprove($id){

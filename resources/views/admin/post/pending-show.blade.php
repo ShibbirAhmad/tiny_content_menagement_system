@@ -51,7 +51,7 @@
                        
                    </div>
    
-                   <a href="{{route('admin.post.index')}}" class="btn btn-lg btn-info btnGo ">Go Back</a>
+                   <a href="{{route('admin.post.pending')}}" class="btn btn-lg btn-info btnGo ">Go Back</a>
    
                   
               </div>

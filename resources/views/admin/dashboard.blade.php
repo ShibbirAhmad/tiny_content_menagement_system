@@ -25,41 +25,41 @@
                 <i class="material-icons">playlist_add_check</i>
             </div>
             <div class="content">
-                <div class="text">TOTAL POST CONTENT</div>
-                <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                <div class="text"> PENDING CONTENT </div>
+                <div class="number count-to" data-from="0" data-to="{{ $total_pending_content }}" data-speed="15" data-fresh-interval="20"></div>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-cyan hover-expand-effect">
             <div class="icon">
-                <i class="material-icons">help</i>
+                <i class="material-icons">library_books</i>
             </div>
             <div class="content">
-                <div class="text">TOTAL VIDEO CONTENT</div>
-                <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                <div class="text"> PUBLISH CONTENT</div>
+                <div class="number count-to" data-from="0" data-to="{{ $total_published_content }}" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-light-green hover-expand-effect">
             <div class="icon">
-                <i class="material-icons">forum</i>
+                <i class="material-icons">library_books</i>
             </div>
             <div class="content">
-                <div class="text"> COMMENTS</div>
-                <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                <div class="text">  POST CONTENT </div>
+                <div class="number count-to" data-from="0" data-to="{{ $total_post_content }}" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-orange hover-expand-effect">
-            <div class="icon">
-                <i class="material-icons">person_add</i>
+            <div class="icon"> 
+                <i class="material-icons">library_books</i>
             </div>
             <div class="content">
-                <div class="text">NEW VISITORS</div>
-                <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                <div class="text">  VIDEO CONTENT </div>
+                <div class="number count-to" data-from="0" data-to="{{ $total_video_content }}" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="header">
-                <h4>Pending post are here .. reivew and approve for publish</h4>
+                <h4> Pending post are here .. reivew and approve for publish</h4>
             </div>
             <div class="body">
                 <div class="table-responsive">
@@ -121,7 +121,7 @@
 
                                 <td> {{$post->author }} </td>
                                 <td colspan="2">
-                                    <a  href="{{route('admin.post.show',$post->id)}}" style="margin-bottom:5px;margin-left:-40px;" class="btn btn-dark "><i style="color:#000" class="fa fa-lg fa-eye  "></i></a>   
+                                    <a  href="{{route('admin.post.pending.show',$post->id)}}" style="margin-bottom:5px;margin-left:-40px;" class="btn btn-dark "><i style="color:#000" class="fa fa-lg fa-eye  "></i></a>   
                                     <div style="margin-left:-40px;" >
                                         {!! Form::open(['method'=>'PATCH', 'route'=> ['admin.post.approve',$post->id ]] ) !!}
                                          <button class="btnApprove btn btn-info"><span  class="" >approve</span><i class="fa fa-check ml-1  "></i></button>

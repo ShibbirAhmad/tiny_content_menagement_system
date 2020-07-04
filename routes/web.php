@@ -23,10 +23,11 @@ Auth::routes();
 Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'middleware'=> ['auth','admin']], function () {
     
     Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@index']); 
-    Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@pending']); 
+   
     Route::resource('post', 'PostController');
-    
+    //route for post pending display and approve
     Route::get('pending/post','PostPendingController@pending')->name('post.pending');
+    Route::get('pending/post-show/{id}','PostPendingController@pendingShow')->name('post.pending.show');
     Route::patch('pending/post/approve/{id}','PostPendingController@postApprove')->name('post.approve');
 
 });

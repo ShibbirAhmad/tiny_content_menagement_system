@@ -112,6 +112,9 @@
     <!-- Slimscroll Plugin Js --> 
     <script src="{{asset('backend/plugins/jquery-slimscroll/jquery.slimscroll.js ')}}"></script>
 
+         <!-- Jquery CountTo Plugin Js -->
+    <script src="{{asset('backend/plugins/jquery-countto/jquery.countTo.js ')}}"></script>
+    
     <!-- Waves Effect Plugin Js -->
     <script src="{{asset('backend/plugins/node-waves/waves.js ')}}"></script>
 
