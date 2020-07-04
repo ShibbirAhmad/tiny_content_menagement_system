@@ -23,6 +23,7 @@ Auth::routes();
 Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'middleware'=> ['auth','admin']], function () {
     
     Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@index']); 
+    Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@pending']); 
     Route::resource('post', 'PostController');
     
     Route::get('pending/post','PostPendingController@pending')->name('post.pending');
@@ -34,11 +35,29 @@ Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'mi
 
 
 
+//those route are for external link
+Route::get('/facebook',function(){
+        return redirect()->away('http://www.facebook.com');
+})->name('facebook');
 
-Route::get('facebook',function(){
+//route for linkedin
+Route::get('/linkedin',function(){
+        return redirect()->away('http://www.linkedin.com');
+})->name('linkedin');
 
-    return redirect()->away('http://www.facebook.com')->name('facebook');
-});
+//route for twitter
+Route::get('/twitter',function(){
+        return redirect()->away('http://www.twitter.com');
+})->name('twitter');
 
+// route for pinterest 
+Route::get('/pinterest',function(){
+       return redirect()->away('http://www.pinterest.com');
+})->name('pinterest');
+
+//route for vimeo 
+Route::get('/vimeo',function(){
+       return redirect()->away('http://www.vimeo.com');
+})->name('vimeo');
            
            

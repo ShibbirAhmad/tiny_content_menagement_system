@@ -52,11 +52,11 @@
         </div>
         <div class="card-footer">
            share post now : 
-           <a href=""><i class="fab fa-lg fa-facebook-f "></i>  </a>  
-           <a href=""><i class="fab fa-lg fa-twitter "></i> </a> 
-           <a href=""> <i class="fab  fa-lg fa-linkedin"></i> </a>
-           <a href=""> <i class="fab  fa-lg  fa-pinterest"></i> </a> 
-           <a href=""> <i class="fab  fa-lg  fa-vimeo-square"></i> </a> 
+           <a target="_blank" href="{{route('facebook')}}"><i class="fab fa-lg fa-facebook-f "></i>  </a>  
+           <a target="_blank" href="{{route('twitter')}}"><i class="fab fa-lg fa-twitter "></i> </a> 
+           <a target="_blank" href="{{route('linkedin')}}"> <i class="fab  fa-lg fa-linkedin"></i> </a>
+           <a target="_blank" href="{{route('pinterest')}}"> <i class="fab  fa-lg  fa-pinterest"></i> </a> 
+           <a target="_blank" href="{{route('vimeo')}}"> <i class="fab  fa-lg  fa-vimeo-square"></i> </a> 
       
         
        </div>

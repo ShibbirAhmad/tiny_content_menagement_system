@@ -34,19 +34,7 @@
                 </div>
 
             @endforeach
-        
-
-     
-        <div class="card-body">
-            <div class="video">
-
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="video">
-
-            </div>
-        </div>
+    
     </div>
 
 @endsection
