@@ -9,8 +9,9 @@
         
              float: left;
              margin: 20px;
+             margin-top:10px;
              margin-left:0px;
-             height:auto;
+             min-height:300px;
              width:45%;
 
              }
@@ -41,7 +42,7 @@
             <h4>{{ $post->title }}</h4>
         </div>
 
-        <div class="card-body">
+        <div class="card-body mt-2 ">
            <div class="latest-post-img-container">
            
                <img class="latest-post-img img-responsive" src="{{asset('backend/images/posts/'.$post->feature_img)}}" alt="">
@@ -82,7 +83,7 @@
 
    <div class="card">
        <div class="card-header text-center "><h4 >Recomended Content</h4></div>
-       <div class="card-body mt-2 ">
+       <div class="card-body  ">
       
         @foreach ($random_image_posts as $r_post)
             <div class="random-post">

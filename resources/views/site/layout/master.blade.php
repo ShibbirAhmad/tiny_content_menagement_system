@@ -36,8 +36,10 @@
 
 <div class="footer-section ">
     <div class="footer text-center ">
-        <p class="heading" >Desingn and Deveoped by Shibbir Ahmad 2020 
+        <p class="heading" ><b><i>  Desingn and Developed by Shibbir Ahmad </i></b>
         </p>
+        <h4 class="heading" ><b><i>  Dedicated to Ready Mart Limited. </i></b>
+        </h4>
     </div>
 </div>
 

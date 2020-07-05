@@ -32,7 +32,7 @@
             <h4>{{ $post->title }}</h4>
         </div>
 
-        <div class="card-body">
+        <div class="card-body mt-2 ">
            <div class="latest-post-img-container">
            
 
