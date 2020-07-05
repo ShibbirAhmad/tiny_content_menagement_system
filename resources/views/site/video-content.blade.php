@@ -4,8 +4,9 @@
 @push('css')
    <style>
        .video_wrap{ width: 100%; height: auto;}
-       .card-body{float: left; margin:20px; width:30%;height:auto;background:#ddd; border-radius:5px;}
-     
+       .card-body{float: left; margin:20px; width:30%;min-height:245px;background:rgb(252, 216, 162); border-radius:5px;}
+       .card-body h4 { font-size:20px;margin:10px;color:rgb(173, 115, 07)}
+      
   </style>
 @endpush
 

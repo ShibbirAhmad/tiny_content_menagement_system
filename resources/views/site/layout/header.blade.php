@@ -2,11 +2,12 @@
     <header>
 		<div class="container-fluid position-relative no-side-padding">
 
-			<a href="#" class="logo"><img src="images/logo.png" alt="tiny logo"></a>
-
+			
 			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="navicon"></i></div>
 
 			<ul class="main-menu visible-on-click" id="main-menu">
+				<li><a href="{{route('home')}}" ><img style="float: left;margin-top:6px;width:50px;height:50px;border-radius:50px;" src="{{asset('site/images/logo.jpg')}}" alt="tiny logo"></a>
+				</li>
 				<li><a href="{{route('home')}}">Home</a></li>
 				<li><a href="{{route('post.content')}}">Image Content </a></li>
 				<li><a href="{{route('video.content')}}">Video Content</a></li>

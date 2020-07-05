@@ -136,14 +136,41 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 	
 .content-area-section {
 
-	background: #ddd;
+	background: #FEF4E5;
 	overflow: hidden;
 }
 
 .main_row {
 
-	 
+	background-color:rgb(250, 223, 182) ; 
+	margin-bottom: 10px;
 }
+
+.left-section{
+	background-color:rgb(250, 223, 182) ;
+	margin-top: 20px;
+
+	border-right:10px solid #FEF4E5 ;
+	
+}
+
+.left-section h4{  color:rgb(173, 115, 7); font-size: 20px;}
+.left-section p {font-size:16px;line-height:2rem;}
+
+.right-section {
+
+	background-color:rgb(250, 223, 182) ;
+	margin-top: 20px;
+
+}
+
+.right-section h4 {
+
+	color:rgb(173, 115, 7) ;font-size: 20px;
+	
+}
+.right-section p { font-size:16px;line-height: 2rem;}
+
 
 .big_video_area {
 	 
@@ -237,17 +264,14 @@ h4 { margin-top:10px; margin-bottom: 10px;}
 }
 
 
-.footer-section {
 
-	height:80px;
-	width:100%;
-	background:#eee
-}
-
-.card-header {  background:#D1D1C6;}
+.card-header {  background:rgb(248, 190, 83);}
 .card-footer {
     margin-top:20px;overflow: hidden;
-	background:#D1D1C6;
+	background:rgb(240, 183, 79);
 }
 .card-footer a{ margin-right:10px;}
-.footer p {font-size:18px;font-style:italic;  margin-top:50px;}
+
+.footer-section{ overflow: hidden;}
+.footer h4 {font-size:20px;font-style:italic;
+	 font-family:Arial, Helvetica, sans-serif; margin-top:80px;}

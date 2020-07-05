@@ -22,7 +22,7 @@
     
   @include('site.layout.header')
       
-    <div class="content-area-section">
+    <div class="content-area-section ">
         <div class="row main_row ml-2 mr-2 mt-3 ">
 
         
@@ -33,16 +33,7 @@
         </div>
     </div>
 
-
-<div class="footer-section ">
-    <div class="footer text-center ">
-        <p class="heading" ><b><i>  Desingn and Developed by Shibbir Ahmad </i></b>
-        </p>
-        <h4 class="heading" ><b><i>  Dedicated to Ready Mart Limited. </i></b>
-        </h4>
-    </div>
-</div>
-
+    @include('site.layout.footer')
 
 	<!-- SCIPTS -->
 

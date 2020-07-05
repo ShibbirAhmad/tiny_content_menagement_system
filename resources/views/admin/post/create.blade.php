@@ -137,6 +137,7 @@
 
              $('.video_row').show()
              $(this).hide()
+             $('#post_content1').hide()
              $('#video_content2').show() 
         })
         
@@ -153,6 +154,7 @@
 
             $('.post_row').show()
             $(this).hide()
+            $('#video_content1').hide()
              $('#post_content2').show() 
 
             })

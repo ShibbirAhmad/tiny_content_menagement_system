@@ -25,7 +25,7 @@
 @section('content')
     
   <!--post content  details start  -->
-  <div class="col-md-8 col-sm-12">
+  <div class="col-md-8 col-sm-12 left-section">
               
     <div class="card">
         <div class="card-header">
@@ -63,13 +63,14 @@
                </form>
         </div>
     </div>
+
 </div>
  <!--content endt -->
 
 
 
 <!--post content start  -->
-<div class="col-md-4 col-sm-12">
+<div class="col-md-4 col-sm-12 right-section ">
 
    <div class="card">
        <div class="card-header text-center "><h4 >Recomended Content</h4></div>
@@ -79,7 +80,7 @@
         @foreach ($random_video_posts as $r_v_post)
                      
         <div class="small_video_area ">
-            <div style=" 
+            <div class="smail" style=" 
             height:140px;
             width:100%;
             border-radius:5px;
@@ -103,7 +104,7 @@
  
 </div>
 
-<!--post content start  -->
+
 
        
 @endsection

@@ -10,7 +10,7 @@
 @section('content')
     
         <!--video content start  -->
-        <div class="col-md-8 col-sm-12">
+        <div class="col-md-8 col-sm-12 left-section ">
             <div class="row">  
 
                 <!--video content big area start  -->
@@ -74,7 +74,7 @@
 
 
        <!--post content start  -->
-       <div class="col-md-4 col-sm-12">
+       <div class="col-md-4 col-sm-12 right-section ">
 
              <div class="row">
               <!--latest post -->
